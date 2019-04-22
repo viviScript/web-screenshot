@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>截图</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.Jcrop.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
+  <script src="./js/screenshot.js"></script>
+  <style type="text/css">
+    #target {
+      background-color: #0affcd;
+      width: 1000px;
+      overflow: hidden;
+      font-size: 24px;
+      display: block;
+      color: #fff;
+    }
+
+    .target-btn {
+      width: 80px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .jcrop_body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .jcrop_hander {
+      position: absolute;
+      top: 200px;
+      left: 312px;
+      z-index: 300;
+      display: flex;
+      justify-content: flex-end;
+      visibility: visible;
+    }
+
+    .divContent {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 200;
+      display: none;
+    }
+
+    .divContent .divJcrop {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button class="target-btn">开始选取</button>
+  <p>网页区域：</p>
+  <div id="target">
+    截图功能111111111<br>
+    截图功能222222222<br>
+    截图功能333333333<br>
+    截图功能444444444<br>
+    截图功能555555555<br>
+    截图功能666666666<br>
+    截图功能777777777<br>
+    <img width="100%" src="./img/5Vo4t5ZboMI.jpg" />
+  </div>
+  <p>截取显示：</p>
+</body>
+<script type="text/javascript">
+  var aa = new ScreenShot("#target", 2, 3);
+  aa.creatCanvasImg()
+  $(".target-btn").click(function () {
+    aa.startJcrop(function(e) {
+      console.log(e, '图片')
+      $("body").append(e)
+    })
+  })
+</script>
+
+</html>
