@@ -8,7 +8,7 @@
   <script src="js/jquery.Jcrop.js"></script>
   <script src="js/html2canvas.js"></script>
   <link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
-  <script src="./js/screenshot.js"></script>
+  <script src="./ts/screenShotTs.js"></script>
   <style type="text/css">
     #target {
       background-color: #0affcd;
@@ -76,7 +76,7 @@
   <p>截取显示：</p>
 </body>
 <script type="text/javascript">
-  var aa = new ScreenShot("#target", 2, 3);
+  var aa = new ScreenShotTs("#target", 2, 3);
   aa.creatCanvasImg()
   $(".target-btn").click(function () {
     aa.startJcrop(function(e) {
